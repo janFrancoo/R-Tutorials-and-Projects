@@ -45,3 +45,26 @@ colnames(df)[2] <- 'ZZZZ'
 mtcars[mtcars$mpg > 20, ]
 any(is.na(df))
 df[is.na(df)] <- 0
+
+row.names <- c('Sam', 'Frank', 'Amy')
+Age <- c(22, 25, 26)
+Weight <- c(150, 165, 20)
+Sex <- c('M', 'M', 'F')
+df <- data.frame(row.names = row.names, Age, Weight, Sex)
+
+is.data.frame(mtcars)
+
+mat <- matrix(1:25, nrow = 5)
+df <- as.data.frame(mat)
+df <- mtcars
+
+head(df, 6)
+mean(df$mpg)
+df[df$cyl == 6, ]
+df[, c('am', 'gear', 'carb')]
+
+df$performance <- df$hp / df$wt
+df$performance <- round(df$performance, 2)
+
+mean(df[(df$hp > 100 & df$wt > 2.5), ]$mpg)
+df['Hornet Sportabout', ]$mpg
